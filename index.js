@@ -8,7 +8,10 @@ require('dotenv').config()
 
 
 // middleware
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:5173", 'https://career--code.web.app'],
+  credentials: true
+}));
 app.use(express.json());
 
 
@@ -205,4 +208,5 @@ app.get('/', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Career Code server is running on port ${port}`)
+
 })
